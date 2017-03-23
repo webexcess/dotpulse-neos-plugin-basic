@@ -1,0 +1,23 @@
+prototype(Basic:ReplaceWithShy) < prototype(TS:Value) {
+	addShy = true
+	regex = ${'/(\S)' + baseConfiguration.replaceWithShy + '(\S)/'}
+	replace = ${this.addShy ? '$1&shy;$2' : '$1$2'}
+	value = ${String.pregReplace(value, this.regex, this.replace)}
+	@if {
+		environment = ${!this.addShy || node.context.live || node.context.currentRenderingMode.preview}
+		config = ${Type.isString(baseConfiguration.replaceWithShy)}
+	}
+}
+
+prototype(Basic:DeleteShyPlaceholder) < prototype(Basic:ReplaceWithShy) {
+	addShy = false
+}
+
+prototype(Basic:AlwaysReplaceWithShy) < prototype(Basic:ReplaceWithShy) {
+	@if.environment = true
+}
+
+prototype(Page) {
+	head.@process.shy = Basic:DeleteShyPlaceholder
+	body.@process.shy = Basic:ReplaceWithShy
+}

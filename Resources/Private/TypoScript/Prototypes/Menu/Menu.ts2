@@ -22,4 +22,6 @@ prototype(Basic:Menu) < prototype(Menu) {
 	normal.attributes.class = 'nav-item'
 
 	link = Basic:MenuLink
+
+	@process.shy = Basic:AlwaysReplaceWithShy
 }

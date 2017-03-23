@@ -38,6 +38,7 @@ Dotpulse:
     Name:
     VersionOfAssets: #add a value to prevent caching issues
     LoadCSSAsynchron: false
+    replaceWithShy: false # Which string should be replaced with &shy; Please use regex style. For e.g. "||" write "\|\|"
     #Filenames
     General:
       Head:
