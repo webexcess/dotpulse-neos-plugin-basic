@@ -1,11 +1,4 @@
 prototype(Basic:HashOfFile) < prototype(Fusion:Value) {
+	@class = 'Dotpulse\\Basic\\TypoScript\\HashFileImplementation'
 	file = null
-
-	@context.template = ${this.file ? this.file : file}
-	fileContent = Fusion:Template {
-		templatePath = ${template}
-	}
-	hash = ${String.md5(this.fileContent)}
-
-	value = ${String.isBlank(this.hash) ? false : this.hash}
 }
