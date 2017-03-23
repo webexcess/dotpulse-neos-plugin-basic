@@ -7,7 +7,7 @@ prototype(Basic:RawContent) < prototype(Fusion:Tag) {
 	innerClass = false
 	editable = true
 
-	@if.innerContent = ${this.innerContent ? true : false}
+	@if.innerContent = ${this.innerContent || this.property ? true : false}
 
 	@context {
 		property = ${this.property}
