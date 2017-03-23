@@ -8,7 +8,6 @@ root.@context {
 	sitePackage = ${node.context.currentSite.siteResourcesPackageKey}
 	siteName = ${node.context.currentSite.name}
 	VersionOfAssets = ${Configuration.setting('Dotpulse.Basic.VersionOfAssets') ? '?v=' + Configuration.setting('Dotpulse.Basic.VersionOfAssets') : ''}
-	rawContent = ${node.context.currentRenderingMode.name == 'rawContent' ? true : false}
 }
 
 include: Prototypes/**/*.ts2
