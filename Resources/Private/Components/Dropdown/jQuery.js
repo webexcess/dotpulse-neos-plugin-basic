@@ -8,7 +8,7 @@ function closeDropdown() {
 	$dropdownOpen = false;
 }
 
-$$(document).on('click', '.dropdown-toggle', function(event) {
+$(document).on('click', '.dropdown-toggle', function(event) {
 	event.preventDefault();
 	event.stopPropagation();
 	let $parent = $(this).parent();
@@ -18,6 +18,4 @@ $$(document).on('click', '.dropdown-toggle', function(event) {
 		$parent.addClass(openClass);
 	}
 	$dropdownOpen = isOpen ? false : $parent;
-});
-
-$$(document).on('click', closeDropdown);
+}).on('click', closeDropdown);

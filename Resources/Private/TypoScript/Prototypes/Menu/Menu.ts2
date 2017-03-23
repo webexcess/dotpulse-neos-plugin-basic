@@ -3,6 +3,7 @@ prototype(Basic:Menu) < prototype(Menu) {
 		entryLevel = ${this.entryLevel}
 	}
 	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/Menu.html'}
+	sectionName = 'Menu'
 	filter = 'TYPO3.Neos:Document,!Dotpulse.Basic:NotInMenu'
 
 	entryLevel = 1

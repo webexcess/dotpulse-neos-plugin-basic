@@ -8,10 +8,10 @@ function closeDropdown() {
 	dropdownOpen = false;
 }
 
-$$(document).on('click', '.dropdown-toggle', event => {
+$$(document).on('click', '.dropdown-toggle', function(event) {
 	event.preventDefault();
 	event.stopPropagation();
-	let parent = event.target.parentElement;
+	let parent = this.parentElement;
 	let isOpen = parent.classList.contains(openClass);
 	closeDropdown();
 	if (!isOpen) {
