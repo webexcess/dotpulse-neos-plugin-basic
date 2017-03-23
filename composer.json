@@ -2,7 +2,7 @@
     "name": "dotpulse/basic",
     "type": "typo3-flow-plugin",
     "description": "Basic package for Neos.io",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "require": {
         "typo3/neos": "^2.2",
         "conecto/neos-compressor": "*"

@@ -36,7 +36,9 @@
 	&::before,
 	&::after {
 		display: inline-block;
-		color: #666;
+		color: #222;
+		opacity: 0.5;
+		transition: opacity 0.2s ease;
 	}
 
 	&::after {
@@ -51,6 +53,13 @@
 
 		[data-lang="de"] & {
 			content: 'Hier klicken um Inhalt hinzuzufügen';
+		}
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			opacity: 1;
 		}
 	}
 }
