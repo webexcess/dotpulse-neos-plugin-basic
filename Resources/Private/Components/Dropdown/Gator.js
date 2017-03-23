@@ -1,5 +1,6 @@
 let dropdownOpen = false;
 let openClass = 'dropdown-open';
+let html = document.documentElement;
 
 function closeDropdown() {
 	if (dropdownOpen) {
@@ -8,7 +9,7 @@ function closeDropdown() {
 	dropdownOpen = false;
 }
 
-$$(document).on('click', '.dropdown-toggle', function(event) {
+function toggleDropdown(event) {
 	event.preventDefault();
 	event.stopPropagation();
 	let parent = this.parentElement;
@@ -18,6 +19,7 @@ $$(document).on('click', '.dropdown-toggle', function(event) {
 		parent.classList.add(openClass);
 	}
 	dropdownOpen = isOpen ? false : parent;
-});
+}
 
-$$(document).on('click', closeDropdown);
+$$(html).on('click', '.dropdown-toggle', toggleDropdown);
+$$(html).on('click', closeDropdown);
