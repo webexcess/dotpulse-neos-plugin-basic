@@ -1,0 +1,16 @@
+prototype(Page) {
+	head.@process {
+		compression >
+		cleanHTML = Basic:CleanHTML
+	}
+	body.@process {
+		compression >
+		cleanHTML = Basic:CleanHTML
+	}
+}
+
+prototype(Basic:CleanHTML) < prototype(TS:Value) {
+	value = ${String.pregReplace(value, '%(?>[^\S ]\s*| \s{2,})(?=[^<]*+(?:<(?!/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b| \z))%Six', ' ')}
+	@position = 'end 999999'
+	@if.isLive = ${node.context.live}
+}
