@@ -17,7 +17,7 @@ prototype(Basic:StyleCollection) < prototype(Fusion:Collection) {
 					isInternal {
 						condition = ${entry}
 						renderer = Fusion:ResourceUri {
-							path = ${'resource://' + sitePackage + '/Public/Styles/' + entry +'.css'}
+							path = ${'resource://' + assetPackage + '/Public/Styles/' + entry +'.css'}
 							@process.wrap = ${value + VersionOfAssets}
 						}
 					}

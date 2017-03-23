@@ -6,7 +6,7 @@ prototype(Basic:InlineScript) < prototype(Fusion:Tag) {
 		type = 'text/javascript'
 	}
 	content = Fusion:Template {
-		templatePath = ${'resource://' + sitePackage + '/Private/Templates/InlineAssets/' + filename + '.js'}
+		templatePath = ${'resource://' + assetPackage + '/Private/Templates/InlineAssets/' + filename + '.js'}
 	}
 	@if.hasFilename = ${this.filename}
 }

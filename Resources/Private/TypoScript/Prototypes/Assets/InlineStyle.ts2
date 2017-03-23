@@ -3,7 +3,7 @@ prototype(Basic:InlineStyle) < prototype(Fusion:Tag) {
 	@context.filename = ${this.filename}
 	tagName = 'style'
 	content = Fusion:Template {
-		templatePath = ${'resource://' + sitePackage + '/Private/Templates/InlineAssets/' + filename + '.css'}
+		templatePath = ${'resource://' + assetPackage + '/Private/Templates/InlineAssets/' + filename + '.css'}
 	}
 	@if.hasFilename = ${this.filename}
 }

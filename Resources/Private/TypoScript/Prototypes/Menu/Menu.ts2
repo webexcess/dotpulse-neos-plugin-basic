@@ -1,10 +1,13 @@
 prototype(Basic:Menu) < prototype(Menu) {
 	@context {
 		entryLevel = ${this.entryLevel}
+		instanceFilter = ${this.instanceFilter}
 	}
+
 	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/Menu.html'}
 	sectionName = 'Menu'
 	filter = 'TYPO3.Neos:Document,!Dotpulse.Basic:NotInMenu'
+	instanceFilter = ${String.replace('[instanceof ' + Array.join(String.split(this.filter, ','), '][instanceof ') + ']', 'instanceof !', '!instanceof ')}
 
 	entryLevel = 1
 	maximumLevels = 1
@@ -20,9 +23,23 @@ prototype(Basic:Menu) < prototype(Menu) {
 
 	site = ${site}
 
-	active.attributes.class = 'nav-item active'
-	current.attributes.class = 'nav-item active current'
-	normal.attributes.class = 'nav-item'
+	normal.attributes.class = Fusion:RawArray {
+		item = 'nav-item'
+		hasSubpages = ${q(item.node).children(instanceFilter).is() ? 'nav-item-has-subpages' : false}
+	}
+
+	active.attributes.class = Fusion:RawArray {
+		item = 'nav-item'
+		active = 'active'
+		hasSubpages = ${q(item.node).children(instanceFilter).is() ? 'nav-item-has-subpages' : false}
+	}
+
+	current.attributes.class = Fusion:RawArray {
+		item = 'nav-item'
+		current = 'current'
+		active = 'active'
+		hasSubpages = ${q(item.node).children(instanceFilter).is() ? 'nav-item-has-subpages' : false}
+	}
 
 	link = Basic:MenuLink
 

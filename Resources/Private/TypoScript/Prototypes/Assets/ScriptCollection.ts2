@@ -16,7 +16,7 @@ prototype(Basic:ScriptCollection) < prototype(Fusion:Collection) {
 					isInternal {
 						condition = ${entry}
 						renderer = Fusion:ResourceUri {
-							path = ${'resource://' + sitePackage + '/Public/Scripts/' + entry +'.js'}
+							path = ${'resource://' + assetPackage + '/Public/Scripts/' + entry +'.js'}
 						}
 						@process.wrap = ${value + VersionOfAssets}
 					}

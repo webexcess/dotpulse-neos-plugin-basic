@@ -3,7 +3,7 @@
 	<f:for each="{items}" as="item" iteration="iteration">
 		<f:if condition="{iteration.isFirst}">
 			<ul{attributes -> f:format.raw()}>
-				{prepend -> f:format.raw()}
+				{ts:render(path:'prepend', context: {node: item.node}) -> f:format.raw()}
 		</f:if>
 		<li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
 			{ts:render(path:'link', context: {node: item.node}) -> f:format.raw()}
@@ -12,7 +12,7 @@
 			</f:if>
 		</li>
 		<f:if condition="{iteration.isLast}">
-				{append -> f:format.raw()}
+				{ts:render(path:'append', context: {node: item.node}) -> f:format.raw()}
 			</ul>
 		</f:if>
 	</f:for>
