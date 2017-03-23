@@ -6,6 +6,7 @@ TYPO3:
 
 Dotpulse:
   Basic:
+    context: Development
     GoogleTagManager: false
     GoogleAnalytics: false
     GoogleSiteVerification : false

@@ -33,6 +33,7 @@ TYPO3:
 
 Dotpulse:
   Basic:
+    context: Production
     HeadComment: 'Created with ♥ and passion by dotpulse.ch'
     GoogleTagManager: # Incl. GTM-
     GoogleAnalytics:
@@ -48,6 +49,7 @@ Dotpulse:
     VersionOfAssets: #add a value to prevent caching issues
     LoadCSSAsynchron: false
     replaceWithShy: false # Which string should be replaced with &shy; Please use regex style. For e.g. "||" write "\|\|"
+    basicRegex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b|\z))' # Basic Regex for safe replacement
     #Filenames
     General:
       Head:

@@ -10,7 +10,8 @@ prototype(Page) {
 }
 
 prototype(Basic:CleanHTML) < prototype(TS:Value) {
-	value = ${String.pregReplace(value, '%(?>[^\S ]\s*| \s{2,})(?=[^<]*+(?:<(?!/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b| \z))%Six', ' ')}
+	regex = ${'/(?>[^\S ]\s*| \s{2,})' + baseConfiguration.basicRegex + '/i'}
+	value = ${String.pregReplace(value, this.regex, ' ')}
 	@position = 'end 999999'
 	@if.isLive = ${node.context.live}
 }
