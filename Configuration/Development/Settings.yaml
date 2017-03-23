@@ -6,7 +6,7 @@ TYPO3:
 
 Dotpulse:
   Basic:
-    GoogleTagManager: FALSE
-    GoogleAnalytics: FALSE
-    GoogleSiteVerification : FALSE
-    Favicon: FALSE
+    GoogleTagManager: false
+    GoogleAnalytics: false
+    GoogleSiteVerification : false
+    Favicon: false

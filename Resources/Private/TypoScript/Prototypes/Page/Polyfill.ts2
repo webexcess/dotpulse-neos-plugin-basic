@@ -1,0 +1,9 @@
+prototype(Basic:Polyfill) < prototype(TS:Value) {
+	@context.features = ${Type.isString(baseConfiguration.Polyfill) ? '?features=' + baseConfiguration.Polyfill : ''}
+
+	value = Basic:ScriptCollection {
+		collection = ${['//cdn.polyfill.io/v2/polyfill.min.js' + features]}
+	}
+
+	@if.hasFonts = ${!String.isBlank(baseConfiguration.Polyfill)}
+}

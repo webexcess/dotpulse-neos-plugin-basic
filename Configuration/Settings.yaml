@@ -15,7 +15,7 @@ TYPO3:
           'Dotpulse.Basic': ['*']
     typoScript:
       autoInclude:
-        'Dotpulse.Basic': TRUE
+        'Dotpulse.Basic': true
 
 # Filenames are comma separated
 #  * intern: Just the name e.g. "Main"
@@ -27,16 +27,17 @@ Dotpulse:
     HeadComment: 'Created with ♥ and passion by dotpulse.ch'
     GoogleTagManager: # Incl. GTM-
     GoogleAnalytics:
-    GoogleAnalyticsSendPageview: TRUE
+    GoogleAnalyticsSendPageview: true
     GoogleSiteVerification:
     GoogleFonts:
+    Polyfill: #use of polyfill.io. if true, all get's included. With a string, a ?features=STRING will be added
     Favicon:
     ThemeColor:
     SafariPinColor:
     MSapplicationTileColor:
     Name:
     VersionOfAssets: #add a value to prevent caching issues
-    LoadCSSAsynchron: FALSE
+    LoadCSSAsynchron: false
     #Filenames
     General:
       Head:

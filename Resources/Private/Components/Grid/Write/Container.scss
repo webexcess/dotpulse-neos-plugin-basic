@@ -5,6 +5,11 @@
 		margin-left: auto;
 		padding-right: $grid-outer-margin;
 		padding-left: $grid-outer-margin;
+
+		#{$classes-container} {
+			padding-right: 0;
+			padding-left: 0;
+		}
 	}
 }
 

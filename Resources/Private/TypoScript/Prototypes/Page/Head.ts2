@@ -17,4 +17,5 @@ prototype(Page).head.headTags = TS:Array {
 
 	GoogleSiteVerification = Basic:GoogleSiteVerification
 	Favicons = Basic:Favicons
+	Polyfill = Basic:Polyfill
 }
