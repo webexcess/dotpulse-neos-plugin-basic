@@ -4,8 +4,7 @@
 // Import not all functions
 // import { NeosEvents } from 'Dotpulse.Basic/Resources/Private/Components/Backend';
 
-
-export function NeosEvents(events, callback) {
+function NeosEvents(events, callback) {
 	// http://neos.readthedocs.io/en/stable/ExtendingNeos/InteractionWithTheNeosBackend.html
 	let count = 0;
 	if (typeof events === 'string') {
@@ -22,12 +21,12 @@ export function NeosEvents(events, callback) {
 	return count + ' Neos Event' + (count === 1 ? '' : 's') + ' added.';
 }
 
-let selector = '#neos-context-bar>.neos-right';
-export let ButtonContextBar = {
+const ButtonContextBarSelector = '#neos-context-bar>.neos-right';
+const ButtonContextBar = {
 	add: options => {
 		if (options.className && options.icon && options.title) {
 			function addButton() {
-				let element = document.querySelector(selector);
+				let element = document.querySelector(ButtonContextBarSelector);
 				let button = document.createElement('button');
 				button.className = 'neos-button ' + options.className;
 				button.setAttribute('type', 'button');
@@ -45,23 +44,26 @@ export let ButtonContextBar = {
 	},
 	remove: className => {
 		if (typeof className === 'string') {
-			let parent = document.querySelector(selector);
-			let button = document.querySelector(selector + '>.' + className);
+			let parent = document.querySelector(ButtonContextBarSelector);
+			let button = document.querySelector(ButtonContextBarSelector + '>.' + className);
 			if (button) {
 				parent.removeChild(button);
 			}
 		}
 	}
-};
+}
 
-function getBackendLanguageCode(code) {
+function getBackendLanguageCode(defaultLanguage = 'de') {
 	try {
-		code = Em.I18n.translations.Dotpulse_Basic.Language.Code;
+		defaultLanguage = Em.I18n.translations.Dotpulse_Basic.Language.Code;
 	} catch (error) {} finally {
-		return (typeof code === 'string') ? code : false;
+		return (typeof defaultLanguage === 'string') ? defaultLanguage : false;
 	}
 }
 
 NeosEvents('ContentModuleLoaded', () => {
-	document.documentElement.setAttribute('data-lang', getBackendLanguageCode('de'));
+	document.documentElement.setAttribute('data-lang', getBackendLanguageCode());
 });
+
+
+export { NeosEvents, ButtonContextBar}

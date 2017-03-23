@@ -1,8 +1,18 @@
+let firstRun = true;
+const txt = 'Your browser can\'t handle push state. It\'s time to download a new one.';
+const link = 'http://outdatedbrowser.com/';
+
 let setPushState = () => {
-	// jscs:disable maximumLineLength
-	console.info('Your browser can\'t handle push state. Time to download a new one: https://www.browser-update.org/update.html');
+	if (firstRun) {
+		firstRun = false;
+		const lang = document.documentElement.lang || 'en';
+		if (confirm(txt)) {
+			window.open(link + lang, 'pushState');
+		}
+	} else {
+		console.info(txt + '\n' + link)
+	}
 	return false;
-	// jscs:enable maximumLineLength
 };
 let getPushState = setPushState;
 

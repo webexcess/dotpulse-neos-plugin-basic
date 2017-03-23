@@ -1,6 +1,6 @@
 // Get type of variable
 
-let possibleTypes = 'Boolean Number String Function Array Date RegExp Object Error Symbol'.split(' ');
+const possibleTypes = 'Boolean Number String Function Array Date RegExp Object Error Symbol'.split(' ');
 
 export default function(variable) {
 	let type = (typeof variable).toLowerCase();

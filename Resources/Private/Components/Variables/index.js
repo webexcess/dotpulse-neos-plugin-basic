@@ -1,14 +1,13 @@
 (() => {
 	// Avoid 'console' errors in browsers that lack a console.
-	let method;
-	let noop = () => {};
-	let methods = [
+	const noop = () => {};
+	const methods = [
 		'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
 		'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
 		'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
 		'timeStamp', 'trace', 'warn'
 	];
-	let console = (window.console = window.console || {});
+	const console = (window.console = window.console || {});
 	methods.forEach(method => {
 		// Only stub undefined methods.
 		if (!console[method]) {
@@ -17,14 +16,15 @@
 	});
 })();
 
-let doc = document;
-let html = doc.documentElement;
+const doc = document;
+const html = doc.documentElement;
 html.className = html.className.replace(new RegExp('\\bno-js\\b', 'g'), 'js').replace(/\s\s*/g, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 
-let dataVersion = html.getAttribute('data-version') || 0; // Version of assets (string)
-let getProtokoll = 'https:' == doc.location.protocol ? 'https' : 'http'; // Active Protocol
-let language = html.lang || 'de'; // Language of the document (string)
-let isLive = new RegExp('\\blive\\b').test(html.className);
+const dataVersion = html.getAttribute('data-version') || 0; // Version of assets (string)
+const getProtokoll = 'https:' == doc.location.protocol ? 'https' : 'http'; // Active Protocol
+const language = html.lang || 'de'; // Language of the document (string)
+const isLive = new RegExp('\\blive\\b').test(html.className);
+
 function lastVisitedNode(node) {
 	try {
 		if (typeof node == 'undefined') {
@@ -40,7 +40,7 @@ function NeosEvents() {
 	return 'No Neos Events added';
 };
 
-let onReady = {
+const onReady = {
 	body: () => {
 		window.body = document.body;
 	}
