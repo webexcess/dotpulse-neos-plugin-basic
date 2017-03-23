@@ -7,6 +7,7 @@ root.@context {
 	baseConfiguration = ${Configuration.setting('Dotpulse.Basic')}
 	sitePackage = ${node.context.currentSite.siteResourcesPackageKey}
 	siteName = ${node.context.currentSite.name}
+	VersionOfAssets = ${Configuration.setting('Dotpulse.Basic.VersionOfAssets') ? '?v=' + Configuration.setting('Dotpulse.Basic.VersionOfAssets') : ''}
 }
 
 include: Prototypes/**/*.ts2

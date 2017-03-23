@@ -1,7 +1,4 @@
 prototype(Basic:ScriptCollection) < prototype(TS:Collection) {
-	@context {
-		VersionOfAssets = ${baseConfiguration.VersionOfAssets ? '?v=' + baseConfiguration.VersionOfAssets : ''}
-	}
 	collection = null
 	itemName = 'item'
 	itemRenderer = TS:Collection {

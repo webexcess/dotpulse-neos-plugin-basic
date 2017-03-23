@@ -1,8 +1,5 @@
 prototype(Basic:StyleCollection) < prototype(TS:Collection) {
-	@context {
-		VersionOfAssets = ${baseConfiguration.VersionOfAssets ? '?v=' + baseConfiguration.VersionOfAssets : ''}
-		LoadCSSAsynchron = ${baseConfiguration.LoadCSSAsynchron}
-	}
+	@context.LoadCSSAsynchron = ${baseConfiguration.LoadCSSAsynchron}
 	collection = null
 	itemName = 'item'
 	itemRenderer = TS:Collection {
