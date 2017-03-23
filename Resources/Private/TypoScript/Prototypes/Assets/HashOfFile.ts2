@@ -1,4 +1,4 @@
 prototype(Basic:HashOfFile) < prototype(Fusion:Value) {
 	@class = 'Dotpulse\\Basic\\TypoScript\\HashFileImplementation'
-	file = null
+	file = ${file ? file : null}
 }

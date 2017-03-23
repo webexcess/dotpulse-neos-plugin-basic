@@ -10,7 +10,11 @@ class HashFileImplementation extends AbstractTypoScriptObject
     public function evaluate()
     {
         $filePath = $this->tsValue('file');
-        $fileContent = Utility\Files::getFileContents($filePath);
-        return md5($fileContent);
+        if ($filePath) {
+            $fileContent = Utility\Files::getFileContents($filePath);
+            return md5($fileContent);
+        }
+
+        return false;
     }
 }
