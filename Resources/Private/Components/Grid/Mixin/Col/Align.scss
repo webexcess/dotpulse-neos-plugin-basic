@@ -1,0 +1,58 @@
+@mixin row-align($breakpoint, $align) {
+	// align: start, center, end, top, middle, bottom, around, between
+	@if $align {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $align {
+				@if $i == 'top' {
+					#{$grid-selector}row-#{$breakpoint}-top {
+						align-items: flex-start;
+					}
+				} @else if $i == 'middle' {
+					#{$grid-selector}row-#{$breakpoint}-middle {
+						align-items: center;
+					}
+				} @else if $i == 'bottom' {
+					#{$grid-selector}row-#{$breakpoint}-bottom {
+						align-items: flex-end;
+					}
+				} @else if $i == 'start' or $i == 'end' {
+					#{$grid-selector}row-#{$breakpoint}-#{$i} {
+						justify-content: flex-#{$i};
+					}
+				} @else if $i == 'center' {
+					#{$grid-selector}row-#{$breakpoint}-center {
+						justify-content: center;
+						text-align: center;
+					}
+				} @else if $i == 'around' or $i == 'between' {
+					#{$grid-selector}row-#{$breakpoint}-#{$i} {
+						justify-content: space-#{$i};
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin col-align($breakpoint, $align) {
+	// align: start, center, end, stretch
+	@if $align {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $align {
+				@if $i == 'top' or $i == 'start' {
+					#{$grid-selector}col-#{$breakpoint}-top {
+						align-self: flex-start;
+					}
+				} @else if $i == 'center' or $i == 'middle' {
+					#{$grid-selector}col-#{$breakpoint}-#{$i} {
+						align-self: center;
+					}
+				} @else if $i == 'bottom' or $i == 'end' {
+					#{$grid-selector}col-#{$breakpoint}-end {
+						align-self: flex-end;
+					}
+				}
+			}
+		}
+	}
+}

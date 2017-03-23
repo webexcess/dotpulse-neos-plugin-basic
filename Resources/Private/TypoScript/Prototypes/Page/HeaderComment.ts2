@@ -1,0 +1,4 @@
+prototype(Page).headerComment {
+	@context.comment = ${baseConfiguration.HeadComment}
+	@process.appenOwnComment = ${String.replace(value, '-->', '	' + comment + '  -->')}
+}

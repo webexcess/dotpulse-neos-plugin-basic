@@ -1,0 +1,12 @@
+@mixin grid-padding($breakpoints, $padding: $grid-gutter-padding) {
+	@if $breakpoints {
+		@each $breakpoint in $breakpoints {
+			@include media-breakpoint-up($breakpoint) {
+				#{$grid-selector}grid-#{$breakpoint}-padding {
+					padding-left: $padding;
+					padding-right: $padding;
+				}
+			}
+		}
+	}
+}

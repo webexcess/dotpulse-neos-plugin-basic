@@ -1,0 +1,10 @@
+prototype(Basic:GoogleFonts) < prototype(TS:Value) {
+	fonts = ${baseConfiguration.GoogleFonts}
+	@context.fonts = ${this.fonts}
+
+	value = Basic:StyleCollection {
+		collection = ${['//fonts.googleapis.com/css?family=' + baseConfiguration.GoogleFonts]}
+	}
+
+	@if.hasFonts = ${!String.isBlank(this.fonts)}
+}

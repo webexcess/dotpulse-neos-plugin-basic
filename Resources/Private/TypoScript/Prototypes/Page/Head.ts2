@@ -1,0 +1,20 @@
+prototype(Page).head.headTags = TS:Array {
+	XUACompatible = TS:Tag {
+		tagName = 'meta'
+		attributes {
+			http-equiv = 'X-UA-Compatible'
+			content = 'IE=edge'
+		}
+	}
+
+	Viewport = TS:Tag {
+		tagName = 'meta'
+		attributes {
+			name = "viewport"
+			content = 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
+		}
+	}
+
+	GoogleSiteVerification = Basic:GoogleSiteVerification
+	Favicons = Basic:Favicons
+}

@@ -1,0 +1,9 @@
+prototype(Page).bodyTag.attributes {
+	data-neos-node = ${node.contextPath}
+	id = ${site == node ? 'level-index' : 'level-' + q(node).parents().count() + '-' + q(node).property('uriPathSegment')}
+	class = TS:RawArray {
+		level = ${'level-' + q(node).parents().count()}
+		type = ${String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
+		subpages = ${q(node).parents().is() && q(node).children('[instanceof TYPO3.Neos:Document]').filter('[_hiddenInIndex=false]').is() ? 'has-subpages' : 'no-subpages'}
+	}
+}

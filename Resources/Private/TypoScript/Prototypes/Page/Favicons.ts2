@@ -1,0 +1,4 @@
+prototype(Basic:Favicons) < prototype(TS:Template) {
+	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/Favicons.html'}
+	@if.hasFavicon = ${baseConfiguration.Favicon}
+}

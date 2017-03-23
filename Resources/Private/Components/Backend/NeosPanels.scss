@@ -1,0 +1,63 @@
+$NeosPanel: (
+	Controls: 82px,
+	Preview: 192px,
+	MenuSticky: 54px,
+	Navigate: 321px,
+	Inspector: 321px
+);
+
+@mixin NeosPanelLeft($property: 'left', $addon: 0) {
+	.neos-menu-panel-sticky & {
+		#{$property}: map-get($NeosPanel, MenuSticky) + $addon;
+	}
+
+	.neos-navigate-panel-open & {
+		#{$property}: map-get($NeosPanel, Navigate) + $addon;
+	}
+
+	.neos-menu-panel-sticky.neos-navigate-panel-open & {
+		#{$property}: map-get($NeosPanel, MenuSticky) + map-get($NeosPanel, Navigate) + $addon;
+	}
+
+	.neos-full-screen & {
+		#{$property}: $addon;
+	}
+}
+
+@mixin NeosPanelRight($property: 'right', $addon: 0) {
+	.neos-inspector-panel-open & {
+		#{$property}: map-get($NeosPanel, Inspector) + $addon;
+	}
+
+	.neos-full-screen & {
+		#{$property}: $addon;
+	}
+}
+
+@mixin NeosPanelTop($property: 'top', $addon: 0) {
+	.neos-controls & {
+		#{$property}: map-get($NeosPanel, Controls) + $addon;
+	}
+
+	.neos-edit-preview-panel-open & {
+		#{$property}: map-get($NeosPanel, Preview) + $addon;
+	}
+
+	.neos-full-screen & {
+		#{$property}: $addon;
+	}
+}
+
+@mixin NeosPanelHeight($property: 'height', $height: 100vh, $addon: 0) {
+	.neos-controls & {
+		#{$property}: calc(#{$height} - #{map-get($NeosPanel, Controls) + $addon});
+	}
+
+	.neos-edit-preview-panel-open & {
+		#{$property}: calc(#{$height} - #{map-get($NeosPanel, Preview) + $addon});
+	}
+
+	.neos-full-screen & {
+		#{$property}: calc(#{$height} - #{$addon});
+	}
+}

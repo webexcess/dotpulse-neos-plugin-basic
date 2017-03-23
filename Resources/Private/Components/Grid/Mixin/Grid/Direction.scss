@@ -1,0 +1,11 @@
+@mixin grid-direction($breakpoint, $direction) {
+	@if $direction {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $direction {
+				#{$grid-selector}#{$i}-#{$breakpoint} {
+					flex-direction: #{$i};
+				}
+			}
+		}
+	}
+}

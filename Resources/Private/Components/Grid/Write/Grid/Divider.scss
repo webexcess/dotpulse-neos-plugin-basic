@@ -1,0 +1,19 @@
+@if $grid-divider-xs {
+	@include col-divider(xs, $grid-divider-xs);
+}
+
+@if $grid-divider-sm {
+	@include col-divider(sm, $grid-divider-sm);
+}
+
+@if $grid-divider-md {
+	@include col-divider(md, $grid-divider-md);
+}
+
+@if $grid-divider-lg {
+	@include col-divider(lg, $grid-divider-lg);
+}
+
+@if $grid-divider-xl {
+	@include col-divider(xl, $grid-divider-xl);
+}

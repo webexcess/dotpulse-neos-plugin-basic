@@ -1,0 +1,12 @@
+prototype(Basic:InlineScript) < prototype(TS:Tag) {
+	filename = false
+	@context.filename = ${this.filename}
+	tagName = 'script'
+	attributes {
+		type = 'text/javascript'
+	}
+	content = TS:Template {
+		templatePath = ${'resource://' + sitePackage + '/Private/Templates/InlineAssets/' + filename + '.js'}
+	}
+	@if.hasFilename = ${this.filename}
+}

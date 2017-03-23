@@ -1,0 +1,12 @@
+TYPO3:
+  Flow:
+    security:
+      session:
+        inactivityTimeout: 0
+
+Dotpulse:
+  Basic:
+    GoogleTagManager: FALSE
+    GoogleAnalytics: FALSE
+    GoogleSiteVerification : FALSE
+    Favicon: FALSE

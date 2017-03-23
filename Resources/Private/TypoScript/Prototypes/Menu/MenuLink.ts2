@@ -1,0 +1,28 @@
+prototype(Basic:MenuLink) < prototype(TS:Tag) {
+	@context {
+		targetSchema = TS:Case {
+			isShortcutWithTargetNode {
+				condition = ${q(node).property('_nodeType.name') == 'TYPO3.Neos:Shortcut' && q(node).property('targetMode')}
+				renderer = TS:Value {
+					scheme = ${Neos.Link.getScheme(q(node).property('target'))}
+					value = ${this.scheme ? this.scheme : 'external'}
+				}
+			}
+			default {
+				condition = true
+				renderer = 'node'
+			}
+		}
+		href = NodeUri {
+			node = ${node}
+		}
+	}
+	tagName = 'a'
+	attributes {
+		rel = ${targetSchema == 'node' ? false : 'noopener'}
+		target = ${targetSchema == 'node' || String.startsWith(href, 'mailto:') ? false : '_blank'}
+		class = ${'nav-' + targetSchema}
+		href = ${href}
+	}
+	content = ${q(node).property('title')}
+}

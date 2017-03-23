@@ -1,0 +1,45 @@
+@if str_length(#{$classes-col}) > 0 {
+	#{$classes-col} {
+		@include grid-col;
+	}
+}
+
+@if str_length(#{$classes-fallback}) > 0  {
+	#{$classes-fallback} {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@include grid-col-autowidth($grid-autowidth);
+@include grid-col-autowidth-min($grid-autowidth-min);
+
+@include col('xs', $grid-xs);
+@include col-offset('xs', $grid-xs-offset);
+@include row-align('xs', $grid-xs-row-align);
+@include col-align('xs', $grid-xs-col-align);
+@include col-order('xs', $grid-xs-order);
+
+@include col('sm', $grid-sm);
+@include col-offset('sm', $grid-sm-offset);
+@include row-align('sm', $grid-sm-row-align);
+@include col-align('sm', $grid-sm-col-align);
+@include col-order('sm', $grid-sm-order);
+
+@include col('md', $grid-md);
+@include col-offset('md', $grid-md-offset);
+@include row-align('md', $grid-md-row-align);
+@include col-align('md', $grid-md-col-align);
+@include col-order('md', $grid-md-order);
+
+@include col('lg', $grid-lg);
+@include col-offset('lg', $grid-lg-offset);
+@include row-align('lg', $grid-lg-row-align);
+@include col-align('lg', $grid-lg-col-align);
+@include col-order('lg', $grid-lg-order);
+
+@include col('xl', $grid-xl);
+@include col-offset('xl', $grid-xl-offset);
+@include row-align('xl', $grid-xl-row-align);
+@include col-align('xl', $grid-xl-col-align);
+@include col-order('xl', $grid-xl-order);

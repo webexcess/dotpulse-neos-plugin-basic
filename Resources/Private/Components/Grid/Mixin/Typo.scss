@@ -1,0 +1,41 @@
+@function pixel($pixel: 16) {
+	@return ($pixel / 16) + rem;
+}
+
+@mixin hyphens {
+	hyphens: auto;
+	hyphenate-limit-lines: auto 5;
+}
+
+@mixin manualhyphens {
+	hyphens: manual;
+}
+
+@mixin retina-img($file-1x, $file-2x, $size) {
+	background-image: $file-1x;
+
+	@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+		background-image: $file-2x;
+		background-size: $size;
+	}
+}
+
+@mixin grabCursor {
+	// scss-lint:disable DuplicateProperty
+	cursor: move;
+	cursor: grab;
+
+	&:active {
+		cursor: grabbing;
+	}
+}
+
+@mixin pointAndGrabCursor {
+	// scss-lint:disable DuplicateProperty
+	cursor: pointer;
+
+	&:active {
+		cursor: move;
+		cursor: grabbing;
+	}
+}

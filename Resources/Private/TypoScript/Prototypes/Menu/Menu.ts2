@@ -1,0 +1,25 @@
+prototype(Basic:Menu) < prototype(Menu) {
+	@context {
+		entryLevel = ${this.entryLevel}
+	}
+	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/Menu.html'}
+	//filter = 'TYPO3.Neos.NodeTypes:Page'
+
+	entryLevel = 1
+	maximumLevels = 1
+
+	attributes {
+		class = ${'nav-' + entryLevel}
+	}
+
+	prepend = ''
+	append = ''
+
+	site = ${site}
+
+	active.attributes.class = 'nav-item active'
+	current.attributes.class = 'nav-item active current'
+	normal.attributes.class = 'nav-item'
+
+	link = Basic:MenuLink
+}

@@ -1,0 +1,12 @@
+namespace: TS=TYPO3.TypoScript
+namespace: Basic=Dotpulse.Basic
+
+// Make these variables everywhere available
+root.@context {
+	basePackage = 'Dotpulse.Basic'
+	baseConfiguration = ${Configuration.setting('Dotpulse.Basic')}
+	sitePackage = ${node.context.currentSite.siteResourcesPackageKey}
+	siteName = ${node.context.currentSite.name}
+}
+
+include: Prototypes/**/*.ts2

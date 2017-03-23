@@ -1,0 +1,13 @@
+@mixin col-divider($breakpoint, $directions, $color: $grid-divider-color) {
+	@include media-breakpoint-up($breakpoint) {
+		@each $direction in $directions {
+			.col-#{$breakpoint}-divider-#{$direction} {
+				border-#{$direction}: 1px solid $color;
+
+				&-0 {
+					border-#{$direction}: none;
+				}
+			}
+		}
+	}
+}

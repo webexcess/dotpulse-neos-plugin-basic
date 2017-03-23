@@ -1,0 +1,55 @@
+@charset "UTF-8"; // scss-lint:disable StringQuotes
+// Improve a bit UX when there's no content at all
+// and add an indication where to click to start.
+
+@keyframes empty-collection-arrow {
+	0%,
+	25%,
+	100% {
+		transform: translateY(0);
+	}
+
+	5%,
+	15% {
+		transform: translateY(-4px);
+	}
+
+	10%,
+	20% {
+		transform: translateY(4px);
+	}
+}
+
+.neos.neos.neos-empty-contentcollection-overlay {
+	$height: 41px;
+	height: $height;
+	margin-left: 2px;
+	margin-right: 2px;
+	text-align: right;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 10px;
+
+	&::before,
+	&::after {
+		display: inline-block;
+		color: #666;
+	}
+
+	&::after {
+		margin: 0.9rem  0 0 1rem;
+		content: '\21e7';
+		animation: empty-collection-arrow 2.5s infinite 2s;
+	}
+
+	&::before {
+		content: 'Click here to add content';
+		line-height: $height;
+
+		[data-lang="de"] & {
+			content: 'Hier klicken um Inhalt hinzuzufügen';
+		}
+	}
+}

@@ -1,0 +1,27 @@
+@mixin grid-col-autowidth($breakpoints) {
+	@if $breakpoints {
+		@each $breakpoint in $breakpoints {
+			@include media-breakpoint-up($breakpoint) {
+				#{$grid-selector}col-#{$breakpoint} {
+					flex-grow: 1;
+					flex-basis: 0;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@mixin grid-col-autowidth-min($breakpoints) {
+	@if $breakpoints {
+		@each $breakpoint in $breakpoints {
+			@include media-breakpoint-up($breakpoint) {
+				#{$grid-selector}col-#{$breakpoint}-min {
+					flex-shrink: 1;
+					flex-basis: auto;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}

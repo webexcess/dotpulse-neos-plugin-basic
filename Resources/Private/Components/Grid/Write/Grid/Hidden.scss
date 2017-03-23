@@ -1,0 +1,7 @@
+@if $grid-hidden {
+	@each $i in $grid-hidden {
+		#{$grid-selector}hidden-#{$i} {
+			@include media-hidden($i);
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+    "name": "dotpulse/basic",
+    "type": "typo3-flow-plugin",
+    "description": "Basic package for Neos.io",
+    "version": "0.1.0",
+    "require": {
+        "typo3/neos": "^2.2",
+        "conecto/neos-compressor": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Dotpulse\\Basic": "Classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "dotpulse AG ppa. webexcess GmbH",
+            "email": "neos+dotpulse-opensource@webexcess.ch",
+            "homepage": "https://webexcess.github.io/open-source-initiative/",
+            "role": "Developer"
+        }
+    ]
+}

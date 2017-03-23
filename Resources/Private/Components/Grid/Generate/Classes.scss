@@ -1,0 +1,75 @@
+$classes-container: ();
+$classes-col: ();
+$classes-autowidth: ();
+$classes-autowidth-min: ();
+$classes-xs: ();
+$classes-sm: ();
+$classes-md: ();
+$classes-lg: ();
+$classes-xl: ();
+$classes-fallback: ();
+
+@if $grid-container {
+	@each $i in $grid-container {
+		@if $i == 'fluid' {
+			$classes-container: join($classes-container, unquote('#{$grid-selector}container-fluid'), comma);
+		} @else if not index($classes-container, '#{$grid-selector}container') {
+			$classes-container: join($classes-container, unquote('#{$grid-selector}container'), comma);
+		}
+	}
+}
+
+@if $grid-xs {
+	@each $i in $grid-xs {
+		$classes-xs: join($classes-xs, unquote('#{$grid-selector}col-xs-#{$i}'), comma);
+	}
+}
+
+@if $grid-sm {
+	@each $i in $grid-sm {
+		$classes-sm: join($classes-sm, unquote('#{$grid-selector}col-sm-#{$i}'), comma);
+	}
+}
+
+@if $grid-md {
+	@each $i in $grid-md {
+		$classes-md: join($classes-md, unquote('#{$grid-selector}col-md-#{$i}'), comma);
+	}
+}
+
+
+@if $grid-lg {
+	@each $i in $grid-lg {
+		$classes-lg: join($classes-lg, unquote('#{$grid-selector}col-lg-#{$i}'), comma);
+	}
+}
+
+@if $grid-xl {
+	@each $i in $grid-xl {
+		$classes-xl: join($classes-xl, unquote('#{$grid-selector}col-xl-#{$i}'), comma);
+	}
+}
+
+@if $grid-autowidth {
+	@each $i in $grid-autowidth {
+		$classes-autowidth: join($classes-autowidth, unquote('#{$grid-selector}col-#{$i}'), comma);
+	}
+}
+
+@if $grid-autowidth-min {
+	@each $i in $grid-autowidth-min {
+		$classes-autowidth-min: join($classes-autowidth-min, unquote('#{$grid-selector}col-#{$i}-min'), comma);
+	}
+}
+
+
+$classes-col: join($classes-xs, $classes-sm, comma);
+$classes-col: join($classes-col, $classes-md, comma);
+$classes-col: join($classes-col, $classes-lg, comma);
+$classes-col: join($classes-col, $classes-xl, comma);
+
+$classes-fallback: join($classes-sm, $classes-md, comma);
+$classes-fallback: join($classes-fallback, $classes-lg, comma);
+$classes-fallback: join($classes-fallback, $classes-xl, comma);
+$classes-col: join($classes-col, $classes-autowidth, comma);
+$classes-col: join($classes-col, $classes-autowidth-min, comma);

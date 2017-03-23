@@ -1,0 +1,24 @@
+// scss-lint:disable ImportantRule
+@mixin media-hidden($name, $breakpoints: $grid-breakpoints) {
+	@if map-has-key($breakpoints, $name) {
+		@include media-breakpoint-single($name) {
+			display: none !important;
+		}
+
+		@include media-breakpoint-up($name) {
+			&-up {
+				display: none !important;
+			}
+		}
+
+		@include media-breakpoint-down($name) {
+			&-down {
+				display: none !important;
+			}
+		}
+	} @else {
+		@media #{$name} {
+			display: none !important;
+		}
+	}
+}

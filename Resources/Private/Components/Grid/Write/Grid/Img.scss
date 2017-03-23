@@ -1,0 +1,7 @@
+@if $grid-img {
+	#{$grid-selector}row {
+		img {
+			@include grid-img;
+		}
+	}
+}

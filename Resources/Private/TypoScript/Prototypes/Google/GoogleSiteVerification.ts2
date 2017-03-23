@@ -1,0 +1,14 @@
+prototype(Basic:GoogleSiteVerification) < prototype(TS:Value) {
+	id = ${baseConfiguration.GoogleSiteVerification}
+	@context.id = ${this.id}
+
+	value = TS:Tag {
+		tagName = 'meta'
+		attributes {
+			name = 'google-site-verification'
+			content = ${id}
+		}
+	}
+
+	@if.hasId = ${!String.isBlank(this.id)}
+}

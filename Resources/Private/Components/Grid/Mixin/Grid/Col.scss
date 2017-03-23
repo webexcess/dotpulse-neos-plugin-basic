@@ -1,0 +1,19 @@
+@mixin grid-col {
+	position: relative;
+	padding-right: $grid-half-gutter-width;
+	padding-left: $grid-half-gutter-width;
+	min-height: 1px;
+}
+
+@mixin col($breakpoint, $grid, $columns: $grid-columns) {
+	@if $grid {
+		@each $i in $grid {
+			#{$grid-selector}col-#{$breakpoint}-#{$i} {
+				@include media-breakpoint-up($breakpoint) {
+					flex: 0 0 percentage($i / $columns);
+					max-width: percentage($i / $columns);
+				}
+			}
+		}
+	}
+}

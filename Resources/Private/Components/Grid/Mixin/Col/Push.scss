@@ -1,0 +1,11 @@
+@mixin col-push($breakpoint, $grid-push, $columns: $grid-columns) {
+	@if $grid-push {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $grid-push {
+				#{$grid-selector}col-#{$breakpoint}-push-#{$i} {
+					left: if($i > 0, percentage($i / $columns), auto);
+				}
+			}
+		}
+	}
+}

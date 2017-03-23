@@ -1,0 +1,12 @@
+prototype(Basic:LogoTag) < prototype(TS:Tag) {
+	tagName = 'a'
+
+	attributes {
+		class = 'nav-logo'
+		href = NodeUri {
+			node = ${site}
+		}
+	}
+
+	content = ${siteName}
+}

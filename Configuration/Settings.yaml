@@ -1,0 +1,61 @@
+TYPO3:
+  Flow:
+    i18n:
+      defaultLocale: de
+  Neos:
+    userInterface:
+      defaultLanguage: de
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+        structureTree:
+          loadingDepth: 2
+      translation:
+        autoInclude:
+          'Dotpulse.Basic': ['*']
+    typoScript:
+      autoInclude:
+        'Dotpulse.Basic': TRUE
+
+# Filenames are comma separated
+#  * intern: Just the name e.g. "Main"
+#  * extern: e.g. //ajax.googleapis.com/...
+#  * If you want to add attributes, add it with square brackets e.g. Filename[async data-prop data-attr="true"]
+
+Dotpulse:
+  Basic:
+    HeadComment: 'Created with ♥ and passion by dotpulse.ch'
+    GoogleTagManager: # Incl. GTM-
+    GoogleAnalytics:
+    GoogleAnalyticsSendPageview: TRUE
+    GoogleSiteVerification:
+    GoogleFonts:
+    Favicon:
+    ThemeColor:
+    SafariPinColor:
+    MSapplicationTileColor:
+    Name:
+    VersionOfAssets: #add a value to prevent caching issues
+    LoadCSSAsynchron: FALSE
+    #Filenames
+    General:
+      Head:
+        Style:
+        Script:
+      Body:
+        Style:
+        Script:
+    Backend:
+      Head:
+        Style:
+        Script:
+      Body:
+        Style:
+        Script:
+    Live:
+      Head:
+        Style:
+        Script:
+      Body:
+        Style:
+        Script:

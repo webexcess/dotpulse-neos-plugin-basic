@@ -1,0 +1,17 @@
+@mixin col-order($breakpoint, $order) {
+	@if $order {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $order {
+				@if $i == 'first' {
+					#{$grid-selector}col-#{$breakpoint}-first {
+						order: -1;
+					}
+				} @else if $i == 'last' {
+					#{$grid-selector}col-#{$breakpoint}-last {
+						order: 1;
+					}
+				}
+			}
+		}
+	}
+}

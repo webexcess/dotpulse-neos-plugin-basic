@@ -1,0 +1,14 @@
+@if $grid-row {
+	#{$grid-selector}row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: $grid-gutter-compensation;
+		margin-left: $grid-gutter-compensation;
+	}
+}
+
+@include grid-direction('xs', $grid-xs-direction);
+@include grid-direction('sm', $grid-sm-direction);
+@include grid-direction('md', $grid-md-direction);
+@include grid-direction('lg', $grid-lg-direction);
+@include grid-direction('xl', $grid-xl-direction);

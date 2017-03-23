@@ -1,0 +1,12 @@
+@mixin grid-margin($breakpoints, $margin: $grid-gutter-margin) {
+	@if $breakpoints {
+		@each $breakpoint in $breakpoints {
+			@include media-breakpoint-up($breakpoint) {
+				#{$grid-selector}grid-#{$breakpoint}-margin {
+					margin-left: $margin;
+					margin-right: $margin;
+				}
+			}
+		}
+	}
+}

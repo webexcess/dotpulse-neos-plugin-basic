@@ -1,0 +1,11 @@
+prototype(Page) {
+	lastVisitedNodeScript >
+	lastVisitedNodeScript = TS:Tag {
+		@position = 'before closingBodyTag'
+		tagName = 'script'
+		content = 'try{lastVisitedNode()}catch(e){}'
+		attributes {
+			type = 'text/javascript'
+		}
+	}
+}

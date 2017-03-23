@@ -1,0 +1,11 @@
+@mixin col-offset($breakpoint, $grid-offset, $columns: $grid-columns) {
+	@if $grid-offset {
+		@include media-breakpoint-up($breakpoint) {
+			@each $i in $grid-offset {
+				.col-#{$breakpoint}-offset-#{$i} {
+					margin-left: percentage($i / $columns);
+				}
+			}
+		}
+	}
+}

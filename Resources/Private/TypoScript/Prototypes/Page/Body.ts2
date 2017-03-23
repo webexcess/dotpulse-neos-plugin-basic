@@ -1,0 +1,10 @@
+prototype(Page).body {
+	Tracking = TS:Array {
+		GoogleTagManager = Basic:GoogleTagManager
+		GoogleAnalytics = Basic:GoogleAnalytics
+	}
+	@process.PrependTracking = ${this.Tracking + value}
+
+	mainAttributes = Basic:MainAttributes
+	sitePackage = ${sitePackage}
+}

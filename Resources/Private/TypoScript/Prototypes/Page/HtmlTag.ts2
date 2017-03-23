@@ -1,0 +1,7 @@
+prototype(Page).htmlTag.attributes {
+	data-version = ${baseConfiguration.VersionOfAssets}
+	class = TS:RawArray {
+		live = ${node.context.inBackend ? 'in-backend' : 'live'}
+		javascript = 'no-js'
+	}
+}

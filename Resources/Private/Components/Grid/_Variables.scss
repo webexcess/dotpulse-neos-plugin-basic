@@ -1,0 +1,149 @@
+@charset "UTF-8"; // scss-lint:disable StringQuotes
+
+$grid-write-classes: true !default;
+// Include container classes: xs, sm, md, lg, xl, fluid
+$grid-container: false !default;
+
+// Enable '.row'
+$grid-row: false !default;
+// Enable '.row img'
+$grid-img: false !default;
+
+// Add hidden Classen (e.g. .hidden-xs), Possible Values xs, sm, md, lg, xl, print, screen
+$grid-hidden: false !default;
+
+
+// (Flex only) Include Auto Width classes: xs, sm, md, lg, xl
+$grid-autowidth: false !default;
+// (Flex only) Include Auto Width classes: xs, sm, md, lg, xl (e.g. col-sm-min)
+$grid-autowidth-min: false !default;
+
+// Enable Grid classes (e.g. col-sm-6)
+$grid-xs: false !default;
+$grid-sm: false !default;
+$grid-md: false !default;
+$grid-lg: false !default;
+$grid-xl: false !default;
+
+// Enable Grid classes (e.g. col-sm-offset-1)
+$grid-xs-offset: false !default;
+$grid-sm-offset: false !default;
+$grid-md-offset: false !default;
+$grid-lg-offset: false !default;
+$grid-xl-offset: false !default;
+
+// Klassen für Abstände (e.g. .grid-#{$breakpoint}-margin)
+$grid-padding: false !default;
+$grid-margin: false !default;
+
+// Reihenfolge: row, column, row-reverse, column-reverse (flex-only)
+$grid-xs-direction: false !default;
+$grid-sm-direction: false !default;
+$grid-md-direction: false !default;
+$grid-lg-direction: false !default;
+$grid-xl-direction: false !default;
+
+// Alignment für jede Spalte in der Zeile (flex-only)
+// start, center, end, top, middle, bottom, around, between
+$grid-xs-row-align: false !default;
+$grid-sm-row-align: false !default;
+$grid-md-row-align: false !default;
+$grid-lg-row-align: false !default;
+$grid-xl-row-align: false !default;
+
+// Alignment for pro Spalte (flex-only)
+// FLEX-Align: top, center || middle , bottom, stretch
+$grid-xs-col-align: false !default;
+$grid-sm-col-align: false !default;
+$grid-md-col-align: false !default;
+$grid-lg-col-align: false !default;
+$grid-xl-col-align: false !default;
+
+// Reihenfolge: first, last (flex-only) (e.g. .col-sm-first)
+$grid-xs-order: false !default;
+$grid-sm-order: false !default;
+$grid-md-order: false !default;
+$grid-lg-order: false !default;
+$grid-xl-order: false !default;
+
+
+// Push & pull: 0 - 12
+$grid-xs-push: false !default;
+$grid-sm-push: false !default;
+$grid-md-push: false !default;
+$grid-lg-push: false !default;
+$grid-xl-push: false !default;
+$grid-xs-pull: false !default;
+$grid-sm-pull: false !default;
+$grid-md-pull: false !default;
+$grid-lg-pull: false !default;
+$grid-xl-pull: false !default;
+
+// Divider
+// xs, sm, md, lg, xl
+$grid-divider-xs: false !default;
+$grid-divider-sm: false !default;
+$grid-divider-md: false !default;
+$grid-divider-lg: false !default;
+$grid-divider-xl: false !default;
+$grid-divider-color: #eee !default;
+
+
+// Abstände
+$grid-gutter-width: 30px !default;
+$grid-outer-margin: $grid-gutter-width / 2 !default;
+$grid-columns: 12 !default;
+
+// Spacer
+$spacer: false !default;
+$spacer-default: 1rem !default;
+$spacer-x: $spacer-default !default;
+$spacer-y: $spacer-default !default;
+$spacers: (
+	0: (
+		x:   0,
+		y:   0
+	),
+	1: (
+		x:   $spacer-x,
+		y:   $spacer-y
+	),
+	2: (
+		x:   ($spacer-x * 1.5),
+		y:   ($spacer-y * 1.5)
+	),
+	3: (
+		x:   ($spacer-x * 3),
+		y:   ($spacer-y * 3)
+	)
+) !default;
+
+
+$grid-half-gutter-width: $grid-gutter-width / 2 !default;
+$grid-gutter-compensation: $grid-gutter-width / -2 !default;
+$grid-gutter-padding: $grid-half-gutter-width !default;
+$grid-gutter-margin: $grid-half-gutter-width !default;
+
+// Breakpoints
+$grid-breakpoints: (
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 544px,
+	// Medium screen / tablet
+	md: 768px,
+	// Large screen / desktop
+	lg: 992px,
+	// Extra large screen / wide desktop
+	xl: 1200px
+) !default;
+
+// Container
+$container-max-widths: (
+	sm: 576px,
+	md: 720px,
+	lg: 940px,
+	xl: 1140px
+) !default;
+
+$grid-selector: if($grid-write-classes, '.', '%');

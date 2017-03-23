@@ -1,0 +1,36 @@
+// scss-lint:disable ImportantRule SpaceAfterPropertyColon
+
+@mixin m-x-auto {
+	margin-right: auto !important;
+	margin-left:  auto !important;
+}
+
+@mixin spacer {
+	#{$grid-selector}m-x-auto {
+		@include m-x-auto;
+	}
+
+	@each $prop, $abbrev in (margin: m, padding: p) {
+		@each $size, $lengths in $spacers {
+			$length-x:   map-get($lengths, x);
+			$length-y:   map-get($lengths, y);
+
+			#{$grid-selector}#{$abbrev}-a-#{$size} { #{$prop}:        $length-y $length-x !important; } // a = All sides
+			#{$grid-selector}#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y !important; }
+			#{$grid-selector}#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x !important; }
+			#{$grid-selector}#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y !important; }
+			#{$grid-selector}#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x !important; }
+
+			// Axes
+			#{$grid-selector}#{$abbrev}-x-#{$size} {
+				#{$prop}-right:  $length-x !important;
+				#{$prop}-left:   $length-x !important;
+			}
+
+			#{$grid-selector}#{$abbrev}-y-#{$size} {
+				#{$prop}-top:    $length-y !important;
+				#{$prop}-bottom: $length-y !important;
+			}
+		}
+	}
+}

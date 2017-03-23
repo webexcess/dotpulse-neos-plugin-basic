@@ -1,0 +1,21 @@
+@if str_length(#{$classes-container}) > 0 {
+	#{$classes-container} {
+		@include clearfix;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: $grid-outer-margin;
+		padding-left: $grid-outer-margin;
+	}
+}
+
+@if $grid-container {
+	@each $breakpoint, $container-max-width in $container-max-widths {
+		@if index($grid-container, $breakpoint) {
+			@include media-breakpoint-up($breakpoint) {
+				#{$grid-selector}container {
+					max-width: $container-max-width;
+				}
+			}
+		}
+	}
+}

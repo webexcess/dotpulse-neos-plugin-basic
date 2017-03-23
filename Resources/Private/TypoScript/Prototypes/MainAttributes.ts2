@@ -1,0 +1,7 @@
+prototype(Basic:MainAttributes) < prototype(TS:Attributes) {
+	id = 'top'
+	class = TS:RawArray {
+		main = 'main'
+		level = ${'main-' + q(node).parents().count()}
+	}
+}
