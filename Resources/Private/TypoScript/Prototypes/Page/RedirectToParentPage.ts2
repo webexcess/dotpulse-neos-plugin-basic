@@ -1,0 +1,8 @@
+prototype(Basic:RedirectToParentPage) < prototype(Fusion:Http.Message) {
+	httpResponseHead {
+		statusCode = 301
+		headers.Location = NodeUri {
+			node = ${q(documentNode).parent().get(0)}
+		}
+	}
+}

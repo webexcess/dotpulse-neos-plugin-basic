@@ -16,9 +16,12 @@ prototype(Basic:StyleCollection) < prototype(Fusion:Collection) {
 					}
 					isInternal {
 						condition = ${entry}
-						renderer = Fusion:ResourceUri {
-							path = ${'resource://' + assetPackage + '/Public/Styles/' + entry +'.css'}
-							@process.wrap = ${value + VersionOfAssets}
+						renderer = Fusion:Array {
+							@context.asset = ${'resource://' + assetPackage + '/Public/Styles/' + entry +'.css'}
+							file = Fusion:ResourceUri {
+								path = ${asset}
+							}
+							hash = Basic:VersionOfAsset
 						}
 					}
 					@process.wrap = ${' href="' + value + '"'}

@@ -1,2 +1,26 @@
 'Dotpulse.Basic:NotInMenu':
   abstract: true
+
+'Dotpulse.Basic:FrontendRedirectToParentPage':
+  superTypes:
+    'Dotpulse.Basic:NotInMenu': true
+    'Dotpulse.NamingConvention:SettingsMixin': false
+    'Dotpulse.NamingConvention:TitleOverrideMixin': false
+    'Dotpulse.NamingConvention:DescriptionMixin': false
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': false
+    'Dotpulse.NamingConvention:TitleInheritMixin': false
+    'Dotpulse.NamingConvention:DescriptionInheritMixin': false
+    'Dotpulse.NamingConvention:ShowInPathTitleMixin': false
+    'Dotpulse.NamingConvention:UseOverrideInPathMixin': false
+    'TYPO3.Neos.Seo:TitleTagMixin': false
+    'TYPO3.Neos.Seo:SeoMetaTagsMixin': false
+    'TYPO3.Neos.Seo:TwitterCardMixin': false
+    'TYPO3.Neos.Seo:CanonicalLinkMixin': false
+    'TYPO3.Neos.Seo:OpenGraphMixin': false
+    'TYPO3.Neos.Seo:XmlSitemapMixin': false
+  abstract: true
+  properties:
+    _hiddenInIndex:
+      ui:
+        inspector:
+          group: hidden

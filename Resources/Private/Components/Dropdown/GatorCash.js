@@ -1,3 +1,5 @@
+let $ = cash;
+let $$ = Gator;
 let $dropdownOpen = false;
 let openClass = 'dropdown-open';
 let html = document.documentElement;

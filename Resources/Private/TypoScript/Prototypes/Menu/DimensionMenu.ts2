@@ -1,0 +1,5 @@
+prototype(DimensionsMenu) {
+	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/DimensionsMenu.html'}
+
+	itemLabel = ${item.label}
+}

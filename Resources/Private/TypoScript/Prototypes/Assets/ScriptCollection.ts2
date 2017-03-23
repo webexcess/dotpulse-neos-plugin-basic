@@ -15,10 +15,13 @@ prototype(Basic:ScriptCollection) < prototype(Fusion:Collection) {
 					}
 					isInternal {
 						condition = ${entry}
-						renderer = Fusion:ResourceUri {
-							path = ${'resource://' + assetPackage + '/Public/Scripts/' + entry +'.js'}
+						renderer = Fusion:Array {
+							@context.asset = ${'resource://' + assetPackage + '/Public/Scripts/' + entry +'.js'}
+							file = Fusion:ResourceUri {
+								path = ${asset}
+							}
+							hash = Basic:VersionOfAsset
 						}
-						@process.wrap = ${value + VersionOfAssets}
 					}
 					@process.wrap = ${' src="' + value + '"'}
 				}

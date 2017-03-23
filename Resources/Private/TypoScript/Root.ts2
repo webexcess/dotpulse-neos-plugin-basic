@@ -1,14 +1,21 @@
 namespace: Fusion = TYPO3.TypoScript
 namespace: Basic = Dotpulse.Basic
 
-// Make these variables everywhere available
-root.@context {
-	basePackage = 'Dotpulse.Basic'
-	baseConfiguration = ${Configuration.setting('Dotpulse.Basic')}
-	sitePackage = ${node.context.currentSite.siteResourcesPackageKey}
-	siteName = ${node.context.currentSite.name}
-	assetPackage = ${node.context.currentSite.siteResourcesPackageKey}
-	VersionOfAssets = ${Configuration.setting('Dotpulse.Basic.VersionOfAssets') ? '?v=' + Configuration.setting('Dotpulse.Basic.VersionOfAssets') : ''}
+root {
+	// Make these variables everywhere available
+	@context {
+		basePackage = 'Dotpulse.Basic'
+		baseConfiguration = ${Configuration.setting('Dotpulse.Basic')}
+		sitePackage = ${node.context.currentSite.siteResourcesPackageKey}
+		siteName = ${node.context.currentSite.name}
+		assetPackage = ${node.context.currentSite.siteResourcesPackageKey}
+		VersionOfAssets = ${Configuration.setting('Dotpulse.Basic.VersionOfAssets') ? '?v=' + Configuration.setting('Dotpulse.Basic.VersionOfAssets') : ''}
+	}
+
+	frontendRedirectToParentPage {
+		condition = ${q(node).is('[instanceof Dotpulse.Basic:FrontendRedirectToParentPage]') && node.context.live}
+		renderer = Basic:RedirectToParentPage
+	}
 }
 
 include: Prototypes/**/*.ts2

@@ -1,0 +1,11 @@
+prototype(Basic:VersionOfAsset) < prototype(Fusion:Value) {
+	asset = null
+	file = ${this.asset ? this.asset : asset}
+
+	@context.file = ${this.file}
+
+	value = Fusion:Value {
+		hash = Basic:HashOfFile
+		value = ${String.isBlank(this.hash) ? VersionOfAssets : '?h=' + this.hash}
+	}
+}
