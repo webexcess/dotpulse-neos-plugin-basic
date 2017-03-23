@@ -1,6 +1,6 @@
-prototype(Basic:MainAttributes) < prototype(TS:Attributes) {
+prototype(Basic:MainAttributes) < prototype(Fusion:Attributes) {
 	id = 'top'
-	class = TS:RawArray {
+	class = Fusion:RawArray {
 		main = 'main'
 		level = ${'main-' + q(node).parents().count()}
 	}

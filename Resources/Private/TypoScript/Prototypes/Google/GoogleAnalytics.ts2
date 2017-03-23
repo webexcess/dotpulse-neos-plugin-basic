@@ -1,4 +1,4 @@
-prototype(Basic:GoogleAnalytics) < prototype(TS:Value) {
+prototype(Basic:GoogleAnalytics) < prototype(Fusion:Value) {
 	id = ${baseConfiguration.GoogleAnalytics}
 	sendPageview = ${baseConfiguration.GoogleAnalyticsSendPageview ? "ga('send','pageview');" : ""}
 

@@ -1,5 +1,5 @@
 prototype(Page).body {
-	Tracking = TS:Array {
+	Tracking = Fusion:Array {
 		GoogleTagManager = Basic:GoogleTagManager
 		GoogleAnalytics = Basic:GoogleAnalytics
 	}

@@ -1,22 +1,22 @@
-prototype(Basic:StyleCollection) < prototype(TS:Collection) {
+prototype(Basic:StyleCollection) < prototype(Fusion:Collection) {
 	@context.LoadCSSAsynchron = ${baseConfiguration.LoadCSSAsynchron}
 	collection = null
 	itemName = 'item'
-	itemRenderer = TS:Collection {
+	itemRenderer = Fusion:Collection {
 		collection = ${item ? String.split(String.replace(String.trim(item), ']', ''), '[') : []}
 		iterationName = 'iterator'
 		itemName = 'entry'
-		itemRenderer = TS:Case {
+		itemRenderer = Fusion:Case {
 			isFilename {
 				condition = ${iterator.isFirst}
-				renderer = TS:Case {
+				renderer = Fusion:Case {
 					isExternal {
 						condition = ${String.indexOf(entry, '//') != -1}
 						renderer = ${entry}
 					}
 					isInternal {
 						condition = ${entry}
-						renderer = TS:ResourceUri {
+						renderer = Fusion:ResourceUri {
 							path = ${'resource://' + sitePackage + '/Public/Styles/' + entry +'.css'}
 							@process.wrap = ${value + VersionOfAssets}
 						}

@@ -1,5 +1,5 @@
-prototype(Page).head.headTags = TS:Array {
-	XUACompatible = TS:Tag {
+prototype(Page).head.headTags = Fusion:Array {
+	XUACompatible = Fusion:Tag {
 		tagName = 'meta'
 		attributes {
 			http-equiv = 'X-UA-Compatible'
@@ -7,7 +7,7 @@ prototype(Page).head.headTags = TS:Array {
 		}
 	}
 
-	Viewport = TS:Tag {
+	Viewport = Fusion:Tag {
 		tagName = 'meta'
 		attributes {
 			name = "viewport"

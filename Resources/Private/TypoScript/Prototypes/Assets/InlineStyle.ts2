@@ -1,8 +1,8 @@
-prototype(Basic:InlineStyle) < prototype(TS:Tag) {
+prototype(Basic:InlineStyle) < prototype(Fusion:Tag) {
 	filename = false
 	@context.filename = ${this.filename}
 	tagName = 'style'
-	content = TS:Template {
+	content = Fusion:Template {
 		templatePath = ${'resource://' + sitePackage + '/Private/Templates/InlineAssets/' + filename + '.css'}
 	}
 	@if.hasFilename = ${this.filename}

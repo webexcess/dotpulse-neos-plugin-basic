@@ -1,4 +1,4 @@
-prototype(Basic:GoogleFonts) < prototype(TS:Value) {
+prototype(Basic:GoogleFonts) < prototype(Fusion:Value) {
 	fonts = ${baseConfiguration.GoogleFonts}
 	@context.fonts = ${this.fonts}
 

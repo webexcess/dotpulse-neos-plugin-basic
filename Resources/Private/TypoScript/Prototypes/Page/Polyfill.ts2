@@ -1,4 +1,4 @@
-prototype(Basic:Polyfill) < prototype(TS:Value) {
+prototype(Basic:Polyfill) < prototype(Fusion:Value) {
 	@context.features = ${Type.isString(baseConfiguration.Polyfill) ? '?features=' + baseConfiguration.Polyfill : ''}
 
 	value = Basic:ScriptCollection {

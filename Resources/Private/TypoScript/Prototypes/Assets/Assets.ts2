@@ -1,4 +1,4 @@
-prototype(Basic:Asset) < prototype(TS:Value) {
+prototype(Basic:Asset) < prototype(Fusion:Value) {
 	// General || Live || Backend
 	context = 'General'
 	// Body || Head
@@ -9,7 +9,7 @@ prototype(Basic:Asset) < prototype(TS:Value) {
 		location = ${this.location}
 	}
 
-	value = TS:Array {
+	value = Fusion:Array {
 		styles = Basic:StyleCollection {
 			collection = ${String.split(baseConfiguration[context][location].Style, ',')}
 		}
@@ -18,7 +18,7 @@ prototype(Basic:Asset) < prototype(TS:Value) {
 		}
 	}
 
-	@if.hasContext = TS:Case {
+	@if.hasContext = Fusion:Case {
 		inBackend {
 			condition = ${context == 'Backend'}
 			renderer = ${node.context.inBackend}
@@ -36,12 +36,12 @@ prototype(Basic:Asset) < prototype(TS:Value) {
 	}
 }
 
-prototype(Basic:Assets)  < prototype(TS:Value) {
+prototype(Basic:Assets)  < prototype(Fusion:Value) {
 	// Body || Head
 	location = 'Body'
 	@context.location = ${this.location}
 
-	value = TS:Array {
+	value = Fusion:Array {
 		general = Basic:Asset {
 			context = 'General'
 			location = ${location}

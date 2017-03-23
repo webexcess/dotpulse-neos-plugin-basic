@@ -9,7 +9,7 @@ prototype(Page) {
 	}
 }
 
-prototype(Basic:CleanHTML) < prototype(TS:Value) {
+prototype(Basic:CleanHTML) < prototype(Fusion:Value) {
 	regex = ${'/(?>[^\S ]\s*| \s{2,})' + baseConfiguration.basicRegex + '/i'}
 	value = ${String.pregReplace(value, this.regex, ' ')}
 	@position = 'end 999999'

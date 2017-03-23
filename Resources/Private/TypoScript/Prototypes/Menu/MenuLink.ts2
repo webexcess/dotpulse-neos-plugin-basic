@@ -1,9 +1,9 @@
-prototype(Basic:MenuLink) < prototype(TS:Tag) {
+prototype(Basic:MenuLink) < prototype(Fusion:Tag) {
 	@context {
-		targetSchema = TS:Case {
+		targetSchema = Fusion:Case {
 			isShortcutWithTargetNode {
 				condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]') && q(node).property('targetMode') == 'selectedTarget'}
-				renderer = TS:Value {
+				renderer = Fusion:Value {
 					scheme = ${Neos.Link.getScheme(q(node).property('target'))}
 					value = ${this.scheme ? this.scheme : 'external'}
 				}

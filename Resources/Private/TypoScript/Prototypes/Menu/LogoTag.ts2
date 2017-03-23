@@ -1,4 +1,4 @@
-prototype(Basic:LogoTag) < prototype(TS:Tag) {
+prototype(Basic:LogoTag) < prototype(Fusion:Tag) {
 	tagName = 'a'
 
 	attributes {

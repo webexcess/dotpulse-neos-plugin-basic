@@ -1,6 +1,6 @@
 prototype(Page) {
 	lastVisitedNodeScript >
-	lastVisitedNodeScript = TS:Tag {
+	lastVisitedNodeScript = Fusion:Tag {
 		@position = 'before closingBodyTag'
 		tagName = 'script'
 		content = 'try{lastVisitedNode()}catch(e){}'

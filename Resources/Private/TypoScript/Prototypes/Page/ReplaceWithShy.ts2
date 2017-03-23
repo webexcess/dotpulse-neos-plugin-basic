@@ -1,4 +1,4 @@
-prototype(Basic:ReplaceWithShy) < prototype(TS:Value) {
+prototype(Basic:ReplaceWithShy) < prototype(Fusion:Value) {
 	addShy = true
 	regex = ${'/(?>(\S)' + baseConfiguration.replaceWithShy + '(\S))' + baseConfiguration.basicRegex + '/'}
 	replace = ${this.addShy ? '$1&shy;$2' : '$1$2'}

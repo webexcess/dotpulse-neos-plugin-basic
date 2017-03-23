@@ -1,8 +1,8 @@
-prototype(Basic:GoogleSiteVerification) < prototype(TS:Value) {
+prototype(Basic:GoogleSiteVerification) < prototype(Fusion:Value) {
 	id = ${baseConfiguration.GoogleSiteVerification}
 	@context.id = ${this.id}
 
-	value = TS:Tag {
+	value = Fusion:Tag {
 		tagName = 'meta'
 		attributes {
 			name = 'google-site-verification'
