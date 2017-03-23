@@ -44,7 +44,6 @@ Dotpulse:
     Favicon:
     ThemeColor:
     SafariPinColor:
-    MSapplicationTileColor:
     Name:
     VersionOfAssets: #add a value to prevent caching issues
     LoadCSSAsynchron: false
