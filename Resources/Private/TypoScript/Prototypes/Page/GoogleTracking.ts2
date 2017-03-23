@@ -1,0 +1,19 @@
+prototype(Page) {
+	head.@process {
+		PrependTracking = Fusion:Array {
+			GoogleTagManagerScript = Basic:GoogleTagManagerScript
+			value = ${value}
+			@position = 'end'
+		}
+		AppendTracking = Fusion:Array {
+			value = ${value}
+			GoogleAnalytics = Basic:GoogleAnalytics
+			@position = 'end'
+		}
+	}
+	body.@process.PrependTracking = Fusion:Array {
+		GoogleTagManagerNoScript = Basic:GoogleTagManagerNoScript
+		value = ${value}
+		@position = 'end'
+	}
+}

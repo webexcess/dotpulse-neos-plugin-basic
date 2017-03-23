@@ -1,10 +1,4 @@
 prototype(Page).body {
-	Tracking = Fusion:Array {
-		GoogleTagManager = Basic:GoogleTagManager
-		GoogleAnalytics = Basic:GoogleAnalytics
-	}
-	@process.PrependTracking = ${this.Tracking + value}
-
 	mainAttributes = Basic:MainAttributes
 	sitePackage = ${sitePackage}
 }
