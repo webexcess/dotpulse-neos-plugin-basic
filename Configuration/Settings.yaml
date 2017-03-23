@@ -3,6 +3,10 @@ TYPO3:
     i18n:
       defaultLocale: de
   Neos:
+    # transliterationRules:
+    #   'de':
+    #     '||': ''
+    #     '---': ''
     userInterface:
       defaultLanguage: de
       navigateComponent:
@@ -16,6 +20,11 @@ TYPO3:
     typoScript:
       autoInclude:
         'Dotpulse.Basic': true
+  TypoScript:
+    defaultContext:
+      # usage: Dotpulse.Basic.AssetTranslation.translate('de text | fr text | it text')
+      # @see www/Neos/Packages/Plugins/Dotpulse.Basic/Classes/Dotpulse/Base/Eel/Helper/AssetTranslationHelper.php
+      'Dotpulse.Basic.AssetTranslation': 'Dotpulse\Basic\Eel\Helper\AssetTranslationHelper'
 
 # Filenames are comma separated
 #  * intern: Just the name e.g. "Main"
@@ -61,3 +70,5 @@ Dotpulse:
       Body:
         Style:
         Script:
+    AssetTranslation:
+      BySeparator: ~ # could be: '|'
