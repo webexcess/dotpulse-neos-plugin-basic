@@ -21,7 +21,9 @@ prototype(Basic:MenuLink) < prototype(Fusion:Tag) {
 	attributes {
 		rel = ${targetSchema == 'node' ? false : 'noopener'}
 		target = ${targetSchema == 'node' || String.startsWith(href, 'mailto:') ? false : '_blank'}
-		class = ${'nav-' + targetSchema}
+		class = Fusion:RawArray {
+			targetSchema = ${'nav-' + targetSchema}
+		}
 		href = ${href}
 	}
 	content = ${q(node).property('title')}

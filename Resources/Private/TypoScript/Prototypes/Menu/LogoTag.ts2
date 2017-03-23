@@ -2,7 +2,9 @@ prototype(Basic:LogoTag) < prototype(Fusion:Tag) {
 	tagName = 'a'
 
 	attributes {
-		class = 'nav-logo'
+		class = Fusion:RawArray {
+			logo = 'nav-logo'
+		}
 		href = NodeUri {
 			node = ${site}
 		}

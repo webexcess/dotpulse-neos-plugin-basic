@@ -10,7 +10,9 @@ prototype(Basic:Menu) < prototype(Menu) {
 	maximumLevels = 1
 
 	attributes {
-		class = ${'nav-' + entryLevel}
+		class = Fusion:RawArray {
+			entryLevel = ${'nav-' + entryLevel}
+		}
 	}
 
 	prepend = ''
