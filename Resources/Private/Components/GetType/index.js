@@ -15,7 +15,7 @@ export default function(variable) {
 		let constructorType = variable.constructor.toString();
 		for (let index in possibleTypes) {
 			let possibleType = possibleTypes[index];
-			if (constructorType.includes(possibleType)) {
+			if (constructorType.indexOf(possibleType) >= 0) {
 				if (checkNaN(possibleType)) {
 					return String(variable);
 				}
