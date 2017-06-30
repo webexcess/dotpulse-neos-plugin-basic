@@ -1,4 +1,4 @@
-namespace: Fusion = TYPO3.TypoScript
+namespace: Fusion = Neos.Fusion
 namespace: Basic = Dotpulse.Basic
 
 root {
@@ -18,4 +18,4 @@ root {
 	}
 }
 
-include: Prototypes/**/*.ts2
+include: Prototypes/**/*.fusion

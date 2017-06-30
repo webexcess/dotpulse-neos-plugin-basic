@@ -1,13 +1,13 @@
-TYPO3:
-  Flow:
-    security:
-      session:
-        inactivityTimeout: 0
 
 Dotpulse:
   Basic:
     context: Development
     GoogleTagManager: false
     GoogleAnalytics: false
-    GoogleSiteVerification : false
+    GoogleSiteVerification: false
     Favicon: false
+Neos:
+  Flow:
+    security:
+      session:
+        inactivityTimeout: 0

@@ -1,9 +1,9 @@
 <?php
 namespace Dotpulse\Basic\Eel\Helper;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Neos\Domain\Service\ConfigurationContentDimensionPresetSource;
-use TYPO3\Eel\ProtectedContextAwareInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\Neos\Domain\Service\ConfigurationContentDimensionPresetSource;
+use Neos\Eel\ProtectedContextAwareInterface;
 
 class AssetTranslationHelper implements ProtectedContextAwareInterface {
 
@@ -24,7 +24,7 @@ class AssetTranslationHelper implements ProtectedContextAwareInterface {
      * Wrap the incoming string in curly brackets
      *
      * @param $text string
-     * @param $node \TYPO3\TYPO3CR\Domain\Model\Node
+     * @param $node \Neos\ContentRepository\Domain\Model\Node
      * @return string
      */
     public function translate($text, $node) {

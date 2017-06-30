@@ -1,12 +1,50 @@
-TYPO3:
+
+Dotpulse:
+  Basic:
+    context: Production
+    HeadComment: 'Created with ♥ and passion by dotpulse.ch'
+    GoogleTagManager: null
+    GoogleAnalytics: null
+    GoogleAnalyticsSendPageview: true
+    GoogleSiteVerification: null
+    GoogleFonts: null
+    Polyfill: null
+    Favicon: null
+    ThemeColor: null
+    SafariPinColor: null
+    Name: null
+    VersionOfAssets: null
+    LoadCSSAsynchron: false
+    replaceWithShy: false
+    basicRegex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b|\z))'
+    General:
+      Head:
+        Style: null
+        Script: null
+      Body:
+        Style: null
+        Script: null
+    Backend:
+      Head:
+        Style: null
+        Script: null
+      Body:
+        Style: null
+        Script: null
+    Live:
+      Head:
+        Style: null
+        Script: null
+      Body:
+        Style: null
+        Script: null
+    AssetTranslation:
+      BySeparator: null
+Neos:
   Flow:
     i18n:
       defaultLocale: de
   Neos:
-    # transliterationRules:
-    #   'de':
-    #     '||': ''
-    #     '---': ''
     userInterface:
       defaultLanguage: de
       navigateComponent:
@@ -16,60 +54,11 @@ TYPO3:
           loadingDepth: 2
       translation:
         autoInclude:
-          'Dotpulse.Basic': ['*']
-    typoScript:
+          Dotpulse.Basic:
+            - '*'
+    fusion:
       autoInclude:
-        'Dotpulse.Basic': true
-  TypoScript:
+        Dotpulse.Basic: true
+  Fusion:
     defaultContext:
-      # usage: Dotpulse.Basic.AssetTranslation.translate('de text | fr text | it text')
-      # @see www/Neos/Packages/Plugins/Dotpulse.Basic/Classes/Dotpulse/Base/Eel/Helper/AssetTranslationHelper.php
-      'Dotpulse.Basic.AssetTranslation': 'Dotpulse\Basic\Eel\Helper\AssetTranslationHelper'
-
-# Filenames are comma separated
-#  * intern: Just the name e.g. "Main"
-#  * extern: e.g. //ajax.googleapis.com/...
-#  * If you want to add attributes, add it with square brackets e.g. Filename[async data-prop data-attr="true"]
-
-Dotpulse:
-  Basic:
-    context: Production
-    HeadComment: 'Created with ♥ and passion by dotpulse.ch'
-    GoogleTagManager: # Incl. GTM-
-    GoogleAnalytics:
-    GoogleAnalyticsSendPageview: true
-    GoogleSiteVerification:
-    GoogleFonts:
-    Polyfill: #use of polyfill.io. if true, all get's included. With a string, a ?features=STRING will be added
-    Favicon:
-    ThemeColor:
-    SafariPinColor:
-    Name:
-    VersionOfAssets: #add a value to prevent caching issues
-    LoadCSSAsynchron: false
-    replaceWithShy: false # Which string should be replaced with &shy; Please use regex style. For e.g. "||" write "\|\|"
-    basicRegex: '(?=[^<]*+(?:<(?!\/?(?:textarea|pre|script)\b)[^<]*+)*+(?:<(?>textarea|pre|script)\b|\z))' # Basic Regex for safe replacement
-    #Filenames
-    General:
-      Head:
-        Style:
-        Script:
-      Body:
-        Style:
-        Script:
-    Backend:
-      Head:
-        Style:
-        Script:
-      Body:
-        Style:
-        Script:
-    Live:
-      Head:
-        Style:
-        Script:
-      Body:
-        Style:
-        Script:
-    AssetTranslation:
-      BySeparator: ~ # could be: '|'
+      Dotpulse.Basic.AssetTranslation: Dotpulse\Basic\Eel\Helper\AssetTranslationHelper

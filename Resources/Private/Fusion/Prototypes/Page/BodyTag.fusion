@@ -4,6 +4,6 @@ prototype(Page).bodyTag.attributes {
 	class = Fusion:RawArray {
 		level = ${'level-' + q(node).parents().count()}
 		type = ${String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
-		subpages = ${q(node).parents().is() && q(node).children('[instanceof TYPO3.Neos:Document]').filter('[_hiddenInIndex=false]').is() ? 'has-subpages' : 'no-subpages'}
+		subpages = ${q(node).parents().is() && q(node).children('[instanceof Neos.Neos:Document]').filter('[_hiddenInIndex=false]').is() ? 'has-subpages' : 'no-subpages'}
 	}
 }

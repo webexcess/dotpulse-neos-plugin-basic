@@ -6,7 +6,7 @@ prototype(Basic:Menu) < prototype(Menu) {
 
 	templatePath = ${'resource://' + basePackage + '/Private/Templates/TypoScriptObjects/Menu.html'}
 	sectionName = 'Menu'
-	filter = 'TYPO3.Neos:Document,!Dotpulse.Basic:NotInMenu'
+	filter = 'Neos.Neos:Document,!Dotpulse.Basic:NotInMenu'
 	instanceFilter = ${String.replace('[instanceof ' + Array.join(String.split(this.filter, ','), '][instanceof ') + ']', 'instanceof !', '!instanceof ')}
 
 	entryLevel = 1

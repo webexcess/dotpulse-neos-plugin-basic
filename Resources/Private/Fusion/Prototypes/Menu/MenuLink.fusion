@@ -2,7 +2,7 @@ prototype(Basic:MenuLink) < prototype(Fusion:Tag) {
 	@context {
 		targetSchema = Fusion:Case {
 			isShortcutWithTargetNode {
-				condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]') && q(node).property('targetMode') == 'selectedTarget'}
+				condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]') && q(node).property('targetMode') == 'selectedTarget'}
 				renderer = Fusion:Value {
 					scheme = ${Neos.Link.getScheme(q(node).property('target'))}
 					value = ${this.scheme ? this.scheme : 'external'}

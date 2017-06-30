@@ -12,12 +12,12 @@
     'Dotpulse.NamingConvention:DescriptionInheritMixin': false
     'Dotpulse.NamingConvention:ShowInPathTitleMixin': false
     'Dotpulse.NamingConvention:UseOverrideInPathMixin': false
-    'TYPO3.Neos.Seo:TitleTagMixin': false
-    'TYPO3.Neos.Seo:SeoMetaTagsMixin': false
-    'TYPO3.Neos.Seo:TwitterCardMixin': false
-    'TYPO3.Neos.Seo:CanonicalLinkMixin': false
-    'TYPO3.Neos.Seo:OpenGraphMixin': false
-    'TYPO3.Neos.Seo:XmlSitemapMixin': false
+    'Neos.Seo:TitleTagMixin': false
+    'Neos.Seo:SeoMetaTagsMixin': false
+    'Neos.Seo:TwitterCardMixin': false
+    'Neos.Seo:CanonicalLinkMixin': false
+    'Neos.Seo:OpenGraphMixin': false
+    'Neos.Seo:XmlSitemapMixin': false
   abstract: true
   properties:
     _hiddenInIndex:
